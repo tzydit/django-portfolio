@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações sobre o Django</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+    <header>
+        <h1>O Framework Django</h1>
+    </header>
+
+    <section>
+        <h2>O que é o Django?</h2>
+        <p>
+            Django é um framework web de alto nível para o desenvolvimento de aplicações web rápidas e seguras. Ele é escrito em Python e oferece uma estrutura robusta, além de uma abordagem limpa e pragmática para o desenvolvimento de sistemas web.
+        </p>
+        <ul>
+            <li>Rápido: O Django é projetado para reduzir o tempo de desenvolvimento.</li>
+            <li>Seguro: O Django ajuda a proteger seu site contra muitas vulnerabilidades comuns.</li>
+            <li>Escalável: Permite o crescimento do seu site sem problemas.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Formulário de Contato</h2>
+        <form action="#" method="post">
+            {% csrf_token %}
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required><br><br>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+</body>
+</html>
