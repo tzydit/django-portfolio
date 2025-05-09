@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Contato</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+<div class="contato-container">
+    <h1>Formulário de Contato</h1>
+
+    {% if enviado %}
+        <div class="mensagem-sucesso">
+            <p><strong>Mensagem enviada com sucesso!</strong></p>
+            <ul>
+                <li><strong>Nome:</strong> {{ dados.nome }}</li>
+                <li><strong>Email:</strong> {{ dados.email }}</li>
+                <li><strong>Mensagem:</strong> {{ dados.mensagem }}</li>
+            </ul>
+        </div>
+        <a href="/contato/" class="btn-contato">Enviar outra mensagem</a>
+    {% else %}
+        <form method="post" class="formulario-contato">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn-contato" type="submit">Enviar</button>
+        </form>
+    {% endif %}
+</div>
+
+</body>
+</html>

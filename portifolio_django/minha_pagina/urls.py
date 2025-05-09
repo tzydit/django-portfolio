@@ -1,6 +1,7 @@
 from django.urls import path
-from . import views
+from .views import django_info, contato_view
 
 urlpatterns = [
-    path('', views.django_info, name='home'),  # Essa rota é para /
+    path('', django_info, name='home'),
+    path('contato/', contato_view, name='contato'),
 ]
