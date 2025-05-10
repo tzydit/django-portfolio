@@ -1,0 +1,19 @@
+<h1>Consulta de CEP - ViaCEP</h1>
+<form method="post">
+    {% csrf_token %}
+    <label for="cep">Digite o CEP:</label>
+    <input type="text" name="cep" id="cep" placeholder="Ex: 01001000" required>
+    <button type="submit">Buscar</button>
+</form>
+
+{% if resultado %}
+    {% if resultado.erro %}
+        <p style="color: red;">{{ resultado.erro }}</p>
+    {% else %}
+        <h3>Resultado:</h3>
+        <p><strong>Logradouro:</strong> {{ resultado.logradouro }}</p>
+        <p><strong>Bairro:</strong> {{ resultado.bairro }}</p>
+        <p><strong>Cidade:</strong> {{ resultado.localidade }}</p>
+        <p><strong>Estado:</strong> {{ resultado.uf }}</p>
+    {% endif %}
+{% endif %}
