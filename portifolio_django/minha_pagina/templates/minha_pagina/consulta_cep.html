@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de CEP - ViaCEP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            padding: 20px;
+            background-color: #2d3e50;
+            color: white;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 16px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #2d3e50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .resultado {
+            margin-top: 20px;
+            background-color: #2d3e5036;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .erro {
+            color: red;
+            font-weight: bold;
+        }
+
+        .resultado p {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .resultado strong {
+            color: #2d3e50;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Consulta de CEP - ViaCEP</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <label for="cep">Digite o CEP:</label>
+        <input type="text" name="cep" id="cep" placeholder="Ex: 01001000" required>
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if resultado %}
+        {% if resultado.erro %}
+            <p class="erro">{{ resultado.erro }}</p>
+        {% else %}
+            <div class="resultado">
+                <h3>Resultado:</h3>
+                <p><strong>Logradouro:</strong> {{ resultado.logradouro }}</p>
+                <p><strong>Bairro:</strong> {{ resultado.bairro }}</p>
+                <p><strong>Cidade:</strong> {{ resultado.localidade }}</p>
+                <p><strong>Estado:</strong> {{ resultado.uf }}</p>
+            </div>
+        {% endif %}
+    {% endif %}
+
+</body>
+</html>
