@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .forms import ContatoForm  # <-- necessário
 from django.http import HttpResponse
+from django.shortcuts import render
 
 def contato_view(request):
     enviado = False
@@ -22,4 +23,10 @@ def contato_view(request):
 
 def django_info(request):
     return render(request, 'minha_pagina/django_info.html')
+
+def documentacao(request):
+    return render(request, 'minha_pagina/documentacao.html')
+
+def aplicacoes(request):
+    return render(request, 'minha_pagina/aplicacoes.html')
 

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentação Django</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+<header>
+  <h1>Documentação Django</h1>
+  <nav>
+    <a class="link-destaque" href="https://docs.djangoproject.com/pt-br/stable/" target="_blank">Documentação Oficial</a>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h2>Instalação</h2>
+    <p>Para instalar o Django, você pode utilizar o pip, o gerenciador de pacotes do Python:</p>
+    <pre><code>pip install django</code></pre>
+    <p>Você também pode criar um ambiente virtual para isolar as dependências do seu projeto:</p>
+    <pre><code>python -m venv env
+source env/bin/activate</code></pre>
+  </section>
+
+  <section>
+    <h2>Estrutura do Projeto</h2>
+    <p>Um projeto Django normalmente é dividido em:</p>
+    <ul>
+      <li><strong>manage.py:</strong> arquivo de gerenciamento do projeto.</li>
+      <li><strong>settings.py:</strong> configurações globais.</li>
+      <li><strong>urls.py:</strong> roteamento de URLs.</li>
+      <li><strong>apps/:</strong> onde ficam os módulos da aplicação.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Componentes Principais</h2>
+    <p>O Django segue o padrão MTV:</p>
+    <ul>
+      <li><strong>Model:</strong> Representa os dados e regras de negócio.</li>
+      <li><strong>Template:</strong> HTML com placeholders dinâmicos.</li>
+      <li><strong>View:</strong> Lógica que responde às requisições.</li>
+    </ul>
+    <p>Essa separação facilita a manutenção, reuso e escalabilidade do projeto.</p>
+  </section>
+</main>
+
+</body>
+</html>
