@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import django_info, contato_view, consulta_cep_view
-from .views import aplicacoes
+from .views import aplicacoes, documentacao
 urlpatterns = [
     path('', django_info, name='home'),
     path('contato/', contato_view, name='contato'),
