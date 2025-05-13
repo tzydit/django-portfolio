@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from .forms import ContatoForm
 from django.http import HttpResponse
+from django.shortcuts import render
 from .utils import buscar_cep_via_api 
+
 
 def contato_view(request):
     enviado = False
@@ -37,6 +39,11 @@ def buscar_cep(cep):
 def django_info(request):
     return render(request, 'minha_pagina/django_info.html')
 
+def documentacao(request):
+    return render(request, 'minha_pagina/documentacao.html')
+
+def aplicacoes(request):
+    return render(request, 'minha_pagina/aplicacoes.html')
 
 def consulta_cep_view(request):
     resultado = None
@@ -45,3 +52,4 @@ def consulta_cep_view(request):
         if cep:
             resultado = buscar_cep_via_api(cep)  
     return render(request, 'minha_pagina/consulta_cep.html', {'resultado': resultado})
+
