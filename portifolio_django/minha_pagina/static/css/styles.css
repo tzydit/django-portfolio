@@ -149,3 +149,47 @@ header nav {
     color: #ffffff;
 }
 
+#filtro-categoria {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    color: #333;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.3s ease;
+}
+
+#filtro-categoria:focus {
+    outline: none;
+    border-color: #2d3e50;
+}
+
+.card-framework {
+    background: linear-gradient(to right, #ffffff, #f7f9fc);
+    border-left: 4px solid #2d3e50;
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-framework:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.card-framework h3 {
+    margin: 0 0 8px 0;
+    color: #2d3e50;
+    font-size: 20px;
+}
+
+.card-framework p {
+    margin: 0;
+    font-size: 15px;
+    color: #555;
+    line-height: 1.5;
+}
